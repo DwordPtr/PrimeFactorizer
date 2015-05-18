@@ -1,3 +1,3 @@
 Prime Factorizer
 ===
-###A program for find prime factorizations.
+###A program for finding prime factorizations.
