@@ -10,4 +10,4 @@ SieveList.o:   SieveList.cpp
 	g++ -c SieveList.cpp
 
 clean: 
-	rm *o PrimeFactorization 
+	rm *o PrimeFactors
