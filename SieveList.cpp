@@ -3,7 +3,8 @@
 #include <vector>
 #include <string>
 using namespace std;
-
+/*This method is used to step through the prime arrays and pull x * n
+where x is a constant and n is positive integer and k*n < the size of the boolean array*/
 void mark(bool * sieve, int x,int size){
    for(int i=x+x; x<size;i+=x){
       sieve[i] = false;
@@ -11,6 +12,7 @@ void mark(bool * sieve, int x,int size){
          return;
    }
 }
+/*This method takes n and returns via refrence a vector of primes less than or equal to n*/
 void PrimesToN(int n, vector<int> &Primes){
    bool * sieve = new bool[n+1];
    for(int i=2; i<n+1;i++)
@@ -25,7 +27,15 @@ void PrimesToN(int n, vector<int> &Primes){
          Primes.push_back(i);
 
 }
+/*This method takse a number n and  a vector that should a list primes up to n inclusively generated PrimesToN
+ It returns via refrence a vector of the prime factors of n with repeted elements as needed*/
 void PrimeFactorizer(int n, std::vector<int> &Primes,std::vector<int> &PrimeFactors){
+   /*1 has the empty set of primes 
+   this code should never get used but it provides some 
+   redundancy and conceptual integrity*/
+   if(n==1){ 
+      return;
+   }
    for(int i =0 ; i<Primes.size();i++)
       if(n==Primes[i]){
          PrimeFactors.push_back(n);
@@ -43,7 +53,8 @@ void PrimeFactorizer(int n, std::vector<int> &Primes,std::vector<int> &PrimeFact
          return;
    }
 }
-
+/*This method takes a list of prime factors and outputs the values 
+in a terminal approriate way*/
 void PrimeFactorOutput(vector<int>& PrimeFactorization){
    int i=0;
    while(i<PrimeFactorization.size()){

@@ -3,7 +3,6 @@
 #include <vector>
 #include <limits>
 using namespace std;
-
 int main(){
   bool debug = false;
   int menuInput = -1;
@@ -30,7 +29,7 @@ int main(){
     do{
     cout << "Enter the Number: ";
     cin >> InputNum;
-    if(cin.good() && InputNum >1) //this program ignores input smaller than 2
+    if(cin.good() && InputNum >1) //1 doesn't have a primefactorization
       inputNumIsValid = true;
     else{
       cin.clear();
