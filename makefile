@@ -1,13 +1,13 @@
 all: PrimeFactorization
 
-PrimeFactorization: main.o SeiveList.o
-	g++ main.o SeiveList.o -o PrimeFactors
+PrimeFactorization: main.o SieveList.o
+	g++ main.o SieveList.o -o PrimeFactors
 
 main.o:  main.cpp
 	g++ -c main.cpp
 
-SeiveList.o:   SeiveList.cpp
-	g++ -c SeiveList.cpp
+SieveList.o:   SieveList.cpp
+	g++ -c SieveList.cpp
 
 clean: 
 	rm *o PrimeFactorization 
