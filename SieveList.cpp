@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <math.h>
 using namespace std;
 /*This method is used to step through the prime arrays and pull x * n
 where x is a constant and n is positive integer and k*n < the size of the boolean array*/
@@ -12,10 +13,11 @@ void mark(bool * sieve, int x,int size){
          return;
    }
 }
-/*This method takes n and returns via refrence a vector of primes less than or equal to n*/
-void PrimesToN(int n, vector<int> &Primes){
+/*This method takes n and returns via refrence a vector of primes less than or equal to sqrt(n) */
+void PrimesToSqrtN(int n, vector<int> &Primes){
    bool * sieve = new bool[n+1];
-   for(int i=2; i<n+1;i++)
+   int sqrtN = ceil(sqrt(n));
+   for(int i=2; i<sqrtN;i++)
       sieve[i] = true;
    for(int i =2; i<ceil(sqrt(n+1));i++)
       if(sieve[i])

@@ -39,7 +39,7 @@ int main(){
   }while(!inputNumIsValid);
     vector<int> inputPrimes;
     vector<int> inputFactorization;
-    PrimesToN(InputNum,inputPrimes);
+    PrimesToSqrtN(InputNum,inputPrimes);
     debug&&cout << "Primes:" << endl;
     if(debug)
       for(int i=0;i<inputPrimes.size();i++)
