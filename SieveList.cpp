@@ -29,7 +29,7 @@ void PrimesToSqrtN(int n, vector<int> &Primes){
          Primes.push_back(i);
 
 }
-/*This method takse a number n and  a vector that should a list primes up to n inclusively generated PrimesToN
+/*This method takse a number n and  a vector that should a list primes up to sqrt(n) inclusively generated PrimesToSqrtN
  It returns via refrence a vector of the prime factors of n with repeted elements as needed*/
 void PrimeFactorizer(int n, std::vector<int> &Primes,std::vector<int> &PrimeFactors){
    /*1 has the empty set of primes 
@@ -38,11 +38,11 @@ void PrimeFactorizer(int n, std::vector<int> &Primes,std::vector<int> &PrimeFact
    if(n==1){ 
       return;
    }
-   for(int i =0 ; i<Primes.size();i++)
-      if(n==Primes[i]){
-         PrimeFactors.push_back(n);
-         return;
-      }
+   /*if the seive returns no primes than n is prime so its prime factorization is {n} */
+   else if(Primes.size() == 0){
+      PrimeFactors.push_back(n);
+      return;
+   }
    int i = 0;
    while(i<Primes.size()){
       if(n%Primes[i] !=0)

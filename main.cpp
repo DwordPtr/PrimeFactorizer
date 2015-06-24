@@ -4,7 +4,7 @@
 #include <limits>
 using namespace std;
 int main(){
-  bool debug = false;
+  bool debug = true;
   int menuInput = -1;
   bool menuInputIsValid = false;
   do{
