@@ -4,7 +4,7 @@
 #include <limits>
 using namespace std;
 int main(){
-  bool debug = true;
+  bool debug = false;
   int menuInput = -1;
   bool menuInputIsValid = false;
   do{
@@ -39,7 +39,7 @@ int main(){
   }while(!inputNumIsValid);
     vector<int> inputPrimes;
     vector<int> inputFactorization;
-    PrimesToSqrtN(InputNum,inputPrimes);
+    PrimesToN(InputNum,inputPrimes);
     debug&&cout << "Primes:" << endl;
     if(debug)
       for(int i=0;i<inputPrimes.size();i++)

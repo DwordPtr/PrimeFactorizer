@@ -2,7 +2,6 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <math.h>
 using namespace std;
 /*This method is used to step through the prime arrays and pull x * n
 where x is a constant and n is positive integer and k*n < the size of the boolean array*/
@@ -13,11 +12,10 @@ void mark(bool * sieve, int x,int size){
          return;
    }
 }
-/*This method takes n and returns via refrence a vector of primes less than or equal to sqrt(n) */
-void PrimesToSqrtN(int n, vector<int> &Primes){
+/*This method takes n and returns via refrence a vector of primes less than or equal to n*/
+void PrimesToN(int n, vector<int> &Primes){
    bool * sieve = new bool[n+1];
-   int sqrtN = ceil(sqrt(n));
-   for(int i=2; i<sqrtN;i++)
+   for(int i=2; i<n+1;i++)
       sieve[i] = true;
    for(int i =2; i<ceil(sqrt(n+1));i++)
       if(sieve[i])
@@ -29,7 +27,7 @@ void PrimesToSqrtN(int n, vector<int> &Primes){
          Primes.push_back(i);
 
 }
-/*This method takse a number n and  a vector that should a list primes up to sqrt(n) inclusively generated PrimesToSqrtN
+/*This method takse a number n and  a vector that should a list primes up to n inclusively generated PrimesToN
  It returns via refrence a vector of the prime factors of n with repeted elements as needed*/
 void PrimeFactorizer(int n, std::vector<int> &Primes,std::vector<int> &PrimeFactors){
    /*1 has the empty set of primes 
@@ -38,11 +36,11 @@ void PrimeFactorizer(int n, std::vector<int> &Primes,std::vector<int> &PrimeFact
    if(n==1){ 
       return;
    }
-   /*if the seive returns no primes than n is prime so its prime factorization is {n} */
-   else if(Primes.size() == 0){
-      PrimeFactors.push_back(n);
-      return;
-   }
+   for(int i =0 ; i<Primes.size();i++)
+      if(n==Primes[i]){
+         PrimeFactors.push_back(n);
+         return;
+      }
    int i = 0;
    while(i<Primes.size()){
       if(n%Primes[i] !=0)
